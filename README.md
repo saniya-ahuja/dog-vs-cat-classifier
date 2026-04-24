@@ -1,89 +1,116 @@
-🐶🐱 Cats vs Dogs Image Classification
+# 🐶🐱 Cats vs Dogs Image Classification
 
-This project builds a deep learning model to classify images of cats and dogs using a pre-trained MobileNetV2 model with TensorFlow. The model is trained on the popular Kaggle Dogs vs Cats dataset and achieves good accuracy with transfer learning.
+This project builds a deep learning model to classify images of **cats 🐱 and dogs 🐶** using a pre-trained **MobileNetV2** model with TensorFlow.  
+The model is trained on the **Kaggle Dogs vs Cats dataset** and achieves good accuracy using transfer learning.
 
-📌 Project Overview
+---
 
-The goal of this project is to develop an image classification system that can automatically distinguish between cats and dogs. It uses:
+## 📌 Project Overview
 
-Image preprocessing and resizing
-Label generation
-Train-test split
-Transfer learning with MobileNetV2
-Neural network training and evaluation
-A prediction system for new images
-📂 Dataset
-Dataset: Dogs vs Cats (Kaggle)
-Contains images labeled as:
-cat → 0
-dog → 1
+The goal of this project is to develop an image classification system that can automatically distinguish between cats and dogs.
 
-Steps:
+### 🔹 Features
+- Image preprocessing and resizing  
+- Label generation  
+- Train-test split  
+- Transfer learning with MobileNetV2  
+- Model training and evaluation  
+- Prediction system for new images  
 
-Download dataset using Kaggle API
-Extract training and test images
-Use a subset (2000 images) for faster training
-⚙️ Installation & Setup
-1. Install dependencies
+---
+
+## 📂 Dataset
+
+- Dataset: **Dogs vs Cats (Kaggle)**  
+
+### Labels:
+- Cat → 0  
+- Dog → 1  
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Install dependencies
+
+```bash
 pip install kaggle tensorflow tensorflow-hub opencv-python pillow matplotlib scikit-learn
-2. Setup Kaggle API
-Upload your kaggle.json
+```
+
+---
+
+### 2️⃣ Setup Kaggle API
+
+```bash
 mkdir -p ~/.kaggle
 mv kaggle.json ~/.kaggle/
 chmod 600 ~/.kaggle/kaggle.json
-3. Download dataset
+```
+
+---
+
+### 3️⃣ Download dataset
+
+```bash
 kaggle competitions download -c dogs-vs-cats
 unzip dogs-vs-cats.zip
 unzip train.zip
-🧪 Data Preprocessing
-Images resized to 224 × 224
-Converted to RGB format
-Normalized pixel values (0–1)
-Labels assigned:
-Dog → 1
-Cat → 0
-🧠 Model Architecture
-Base Model: MobileNetV2 (pretrained on ImageNet)
-Feature extractor from TensorFlow Hub
-Custom classification layer:
+```
+
+---
+
+## 🧪 Data Preprocessing
+
+- Resize images to **224 × 224**  
+- Convert images to RGB format  
+- Normalize pixel values (0–1)  
+- Assign labels:
+  - Dog → 1  
+  - Cat → 0  
+
+---
+
+## 🧠 Model Architecture
+
+- Base Model: **MobileNetV2 (pretrained on ImageNet)**  
+
+```python
 model = tf.keras.Sequential([
     pretrained_model,
     tf.keras.layers.Dense(2)
 ])
-Loss Function: Sparse Categorical Crossentropy
-Optimizer: Adam
-🏋️ Training
-Train-Test Split: 80% / 20%
-Epochs: 5
-Training images: 1600
-Testing images: 400
-📊 Evaluation
+```
 
-Model performance is evaluated using:
+### ⚙️ Configuration
+- Loss: Sparse Categorical Crossentropy  
+- Optimizer: Adam  
 
-Test Loss
-Test Accuracy
-🔮 Prediction System
+---
 
-You can classify your own image:
+## 🏋️ Training
 
-Steps:
-Input image path
-Resize to 224×224
-Normalize
-Predict using trained model
-Output:
-0 → Cat 🐱
-1 → Dog 🐶
-🚀 Example Usage
-input_image_path = input('Path of the image: ')
+- Train-Test Split: **80% / 20%**  
+- Epochs: **5**  
+- Training Images: **1600**  
+- Testing Images: **400**  
 
-Model will display the image and predict whether it's a cat or dog.
+---
 
-🛠️ Technologies Used
-Python
-TensorFlow / Keras
-OpenCV
-NumPy
-Matplotlib
-Scikit-learn
+## 📊 Evaluation
+
+- Model evaluated using test accuracy and loss  
+- Achieves good performance with transfer learning  
+
+---
+
+## 🔮 Prediction
+
+```python
+input_image_path = input("Enter image path: ")
+```
+
+### Output:
+- Cat 🐱  
+- Dog 🐶  
+
+---
