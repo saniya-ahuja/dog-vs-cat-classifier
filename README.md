@@ -1,5 +1,3 @@
-👇
-
 🐶🐱 Cats vs Dogs Image Classification
 
 This project builds a deep learning model to classify images of cats and dogs using a pre-trained MobileNetV2 model with TensorFlow. The model is trained on the popular Kaggle Dogs vs Cats dataset and achieves good accuracy with transfer learning.
