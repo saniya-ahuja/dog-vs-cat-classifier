@@ -103,14 +103,3 @@ model = tf.keras.Sequential([
 
 ---
 
-## 🔮 Prediction
-
-```python
-input_image_path = input("Enter image path: ")
-```
-
-### Output:
-- Cat 🐱  
-- Dog 🐶  
-
----
